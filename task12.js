@@ -6,8 +6,9 @@ input - arr = [‘12/02/2023’, ‘11/02/2023’, ‘10/02/2023’] 
 */
 
 
-let arr = new Array();
-arr = ["12/02/2023", "11/02/2023", "10/02/2023"];
+function something(arr) {
+//  let arr = new Array();
+// arr = ["12/02/2023", "11/02/2023", "10/02/2023"];
 
 const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
@@ -21,7 +22,8 @@ weekday.forEach((elem,i) => {
    obj[`${arr[i]}`] = day[i];
 })
 
-console.log(obj);
+return obj;
+}
 
 //j = .getDay();
 
@@ -35,3 +37,13 @@ console.log(obj);
 //let day = d.getDay();
 //console.log(day);
 //console.log(d);
+
+
+
+if(JSON.stringify(something(["12/02/2023", "11/02/2023", "10/02/2023"])) == JSON.stringify({
+  "12/02/2023": 'Saturday', "11/02/2023": 'Thursday', "10/02/2023": 'Monday'
+})) {
+ console.log("TEST 1 Pass");
+} else {
+  console.log("TEST 1 Failed");
+}
